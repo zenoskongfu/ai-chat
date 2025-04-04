@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 import MsgItem from "./MsgItem";
+import { sleep } from "@/app/util/sleep";
 
 export type MessageType = {
 	id: string;
@@ -40,14 +41,6 @@ const messages: MessageType[] = [
 		createdAt: new Date(),
 	},
 ];
-
-const sleep = () => {
-	return new Promise((resolve) => {
-		setTimeout(() => {
-			resolve(null);
-		}, 1000);
-	});
-};
 
 const getMessages = async () => {
 	await sleep();

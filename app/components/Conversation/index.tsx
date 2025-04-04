@@ -10,7 +10,7 @@ const senderStyle: React.CSSProperties = {
 
 export default function Conversation() {
 	return (
-		<Flexbox className='h-full'>
+		<Flexbox className='h-full w-full'>
 			<div className='flex-[8_0_20%]'>
 				<Suspense fallback={<div>loading...</div>}>
 					<ChatList />
