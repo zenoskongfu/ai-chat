@@ -43,5 +43,9 @@ export default function Items() {
 		},
 	});
 
-	return <Conversations style={style} items={items} menu={menuConfig} />;
+	return (
+		<div className='h-full '>
+			<Conversations style={style} items={items} menu={menuConfig} />
+		</div>
+	);
 }
