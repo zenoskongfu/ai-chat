@@ -1,4 +1,4 @@
-import { sleep } from "../util/sleep";
+import { sleep } from "@/app/util/sleep";
 import Items from "./features/Items";
 
 const TopicStyle: React.CSSProperties = {
