@@ -1,16 +1,34 @@
-import { Flexbox } from "react-layout-kit";
-import Topic from "./components/Topic";
-import Conversation from "./components/Conversation";
+"use client";
 
+import { useEffect, useState } from "react";
+import { Flexbox } from "react-layout-kit";
+import LoadingContent from "./LoadingContent";
+import Redirect from "./Redirect";
+// import { sleep } from "./util/sleep";
+const stages = ["start", "init user", "end"];
+
+let index = 0;
 export default function Home() {
+	// await sleep(3000);
+	const [stage, setStage] = useState("start");
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			const stage = stages[index++];
+			console.log(stage);
+			setStage(stage);
+			if (index >= stages.length) {
+				clearInterval(interval);
+			}
+		}, 3000);
+
+		return () => clearInterval(interval);
+	}, []);
+
 	return (
 		<Flexbox horizontal flex={"1 0"} className='h-screen'>
-			<div className='flex-[8_0_auto] h-full'>
-				<Conversation />
-			</div>
-			<div className='flex-[2_0_auto]'>
-				<Topic />
-			</div>
+			<LoadingContent stage={stage} />
+			<Redirect stage={stage} />
 		</Flexbox>
 	);
 }
