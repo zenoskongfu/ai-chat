@@ -1,13 +1,16 @@
-export const sessionSlice = (set, get)=>{
-  return {
-    switchSession: (id) => {
-      set({ activeId: id });
-    },
+import { SessionStoreApiType } from "./initialState";
 
-    createSession: (id) => {
-      set((state) => ({
-        sessionList: [...state.sessionList, id],
-      }));
-    },
-  }
-});
+export const sessionSlice = (set: SessionStoreApiType["setState"], get: SessionStoreApiType["getState"]) => {
+	return {
+		switchSession: (id: string) => {
+			set({ activeId: id });
+		},
+
+		createSession: (id: string) => {
+			const state = get();
+			set({
+				sessionList: [...state.sessionList, id],
+			});
+		},
+	};
+};
