@@ -16,8 +16,8 @@ export default function Conversation() {
 					<ChatList />
 				</Suspense>
 			</div>
-			<div style={senderStyle} className='flex-[2_0_2%]'>
-				<Flexbox justify='center' className='h-full'>
+			<div style={senderStyle} className='flex-[1_0_2%]'>
+				<Flexbox justify='center'>
 					<Sender />
 				</Flexbox>
 			</div>

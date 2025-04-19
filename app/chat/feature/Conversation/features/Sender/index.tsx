@@ -26,6 +26,7 @@ export default function InputSender() {
 					setLoading(false);
 					message.error("Cancel sending!");
 				}}
+				style={{ minHeight: "100px", height: "10vh" }}
 				autoSize={{ minRows: 2, maxRows: 6 }}
 			/>
 		</div>

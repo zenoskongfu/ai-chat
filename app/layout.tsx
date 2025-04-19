@@ -22,7 +22,7 @@ export default async function RootLayout({
 		<html lang='en'>
 			<body className={`w-screen h-screen `}>
 				<Flexbox horizontal wrap='nowrap'>
-					<div className='w-[70%]'>{children}</div>
+					<div className='w-full'>{children}</div>
 				</Flexbox>
 			</body>
 		</html>

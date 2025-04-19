@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Flexbox } from "react-layout-kit";
 
 export default function ChatLayout(props: {
@@ -6,10 +7,12 @@ export default function ChatLayout(props: {
 	topic: React.ReactNode;
 }) {
 	return (
-		<Flexbox horizontal>
+		<Flexbox horizontal className='w-full'>
 			{props.session}
 			<div className='flex-[8_0_20%]'>{props.children}</div>
-			{props.topic}
+			{/* <Suspense fallback={<div>add topic....</div>}> */}
+			<div className='flex-[2_0_10%]'>{props.topic}</div>
+			{/* </Suspense> */}
 		</Flexbox>
 	);
 }
