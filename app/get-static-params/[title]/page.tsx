@@ -2,6 +2,9 @@ export const generateStaticParams = async () => {
 	return [{ title: "hello" }, { title: "world" }];
 };
 
-export default function Page(props: { params: { title: string } }) {
-	return <div>title: {props.params.title}</div>;
+export default async function Page(props: {
+	params: Promise<{ title: string }>;
+}) {
+	const { title } = await props.params;
+	return <div>title: {title}</div>;
 }
