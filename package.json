@@ -11,12 +11,14 @@
 	"dependencies": {
 		"@ant-design/icons": "^6.0.0",
 		"@ant-design/x": "^1.1.0",
+		"@zenos-chen/avatar": "^1.0.4",
 		"allotment": "^1.20.3",
-		"antd": "^5.24.6",
+		"antd": "^5.24.7",
 		"next": "15.2.4",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"react-layout-kit": "^1.9.1",
+		"swr": "^2.3.3",
 		"uuid": "^11.1.0",
 		"zustand": "^5.0.3"
 	},

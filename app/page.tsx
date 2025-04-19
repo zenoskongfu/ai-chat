@@ -20,7 +20,7 @@ export default function Home() {
 			if (index >= stages.length) {
 				clearInterval(interval);
 			}
-		}, 3000);
+		}, 1000);
 
 		return () => clearInterval(interval);
 	}, []);
