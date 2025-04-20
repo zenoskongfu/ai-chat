@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import Negotiator from "negotiator";
 import { match } from "@formatjs/intl-localematcher";
+import { defaultLocale, locales } from "./config/languages";
 
 // lang_local, 字符集
-let locales = ["zh", "en", "nl"];
-const defaultLocale = "zh";
-
 const getLang = async (req: NextRequest) => {
 	const headers = {
 		"accept-language": req.headers.get("accept-language") || "",
@@ -15,14 +13,24 @@ const getLang = async (req: NextRequest) => {
 };
 
 export async function middleware(req: NextRequest) {
-	const lang = await getLang(req);
 	const pathname = req.nextUrl.pathname;
-	if (pathname.startsWith(`/${lang}/`) || pathname === `/${lang}`) {
+
+	// 已经有语言前缀
+	const hasLocales = locales.find((locale) => {
+		if (pathname.startsWith(`/${locale}`) || pathname === `/${locale}`) {
+			return true;
+		}
+	});
+	if (hasLocales) {
 		return NextResponse.next();
 	}
+
+	// 静态资源
 	if (/\.(.*)$/.test(pathname)) {
 		return NextResponse.next();
 	}
+
+	const lang = await getLang(req);
 	req.nextUrl.pathname = `/${lang}${pathname}`;
 	return NextResponse.redirect(req.nextUrl);
 }

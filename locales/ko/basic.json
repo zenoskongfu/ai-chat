@@ -1,0 +1,10 @@
+{
+	"name": "이름",
+	"age": "나이",
+	"gender": "성별",
+	"birthday": "생일",
+	"address": "주소",
+	"home": "홈",
+	"chat": "채팅",
+	"friends": "친구"
+}

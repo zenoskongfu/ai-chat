@@ -1,0 +1,10 @@
+{
+	"name": "姓名",
+	"age": "年龄",
+	"gender": "性别",
+	"birthday": "生日",
+	"address": "地址",
+	"home": "主页",
+	"chat": "聊天",
+	"friends": "好友"
+}

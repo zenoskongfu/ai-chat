@@ -1,0 +1,10 @@
+{
+	"name": "名前",
+	"age": "年齢",
+	"gender": "性別",
+	"birthday": "誕生日",
+	"address": "住所",
+	"home": "ホーム",
+	"chat": "チャット",
+	"friends": "友達"
+}

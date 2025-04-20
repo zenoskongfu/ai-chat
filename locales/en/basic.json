@@ -1,0 +1,10 @@
+{
+	"name": "name",
+	"age": "age",
+	"gender": "gender",
+	"birthday": "birthday",
+	"address": "address",
+	"home": "home",
+	"chat": "chat",
+	"friends": "friends"
+}
