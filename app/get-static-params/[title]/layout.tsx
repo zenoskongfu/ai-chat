@@ -1,10 +1,15 @@
 export const generateStaticParams = async () => {
 	return [{ title: "hello" }, { title: "world" }];
 };
-
-export default async function Page(props: {
+export default async function Layout(props: {
 	params: Promise<{ title: string }>;
+	children: React.ReactElement;
 }) {
 	const { title } = await props.params;
-	return <div>title: {title}</div>;
+	return (
+		<div>
+			layout title: {title}
+			<div>{props.children}</div>
+		</div>
+	);
 }
